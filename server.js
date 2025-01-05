@@ -37,7 +37,9 @@ app.use((error, req, res, next) => {
 });
 
 connectDB();
-
+app.get('/', (req, res) => {
+    res.send('<h1>The server is working</h1>');
+});
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api', dashboard);
